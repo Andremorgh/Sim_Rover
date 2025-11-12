@@ -1,0 +1,21 @@
+quantum_controller:
+  ros__parameters:
+    # Percorsi LUT (modificali con i tuoi path reali nel workspace)
+    linear_lut_csv: "/config/LUT_lin_comparison"
+    angular_lut_csv: "/config/LUT_ang_comparison"
+
+    # Nomi colonne nel CSV: [x, y, value]
+    # x = dist_error (m), y = orient_error (rad), value = velocità (m/s o rad/s)
+    linear_lut_columns: ["dist_error", "orient_error", "linear_velocity"]
+    angular_lut_columns: ["dist_error", "orient_error", "angular_velocity"]
+
+    # 'nearest' funziona con punti sparsi; 'bilinear' richiede griglia regolare
+    lut_method: "nearest"
+
+    control_rate_hz: 30.0
+    max_linear: 0.8
+    max_angular: 1.5
+    stop_dist_thresh: 0.05
+    stop_yaw_thresh: 0.03
+    soft_start: true
+    alpha_smooth: 0.2

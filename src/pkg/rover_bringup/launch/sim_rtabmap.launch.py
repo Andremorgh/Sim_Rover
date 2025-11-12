@@ -48,7 +48,7 @@ def launch_setup(context, *args, **kwargs):
         DeclareLaunchArgument('sync_queue_size',  default_value=LaunchConfiguration('queue_size'), description='Queue size of topic synchronizers.'),
         DeclareLaunchArgument('qos_image',       default_value=LaunchConfiguration('qos'), description='Specific QoS used for image input data: 0=system default, 1=Reliable, 2=Best Effort.'),
         DeclareLaunchArgument('qos_camera_info', default_value=LaunchConfiguration('qos'), description='Specific QoS used for camera info input data: 0=system default, 1=Reliable, 2=Best Effort.'),
-        DeclareLaunchArgument('qos_scan',        default_value=LaunchConfiguration('qos'), description='Specific QoS used for scan input data: 0=system default, 1=Reliable, 2=Best Effort.'),
+        DeclareLaunchArgument('qos_scan',        default_value='2', description='Specific QoS used for scan input data: 0=system default, 1=Reliable, 2=Best Effort.'),
         DeclareLaunchArgument('qos_odom',        default_value=LaunchConfiguration('qos'), description='Specific QoS used for odometry input data: 0=system default, 1=Reliable, 2=Best Effort.'),
         DeclareLaunchArgument('qos_user_data',   default_value=LaunchConfiguration('qos'), description='Specific QoS used for user input data: 0=system default, 1=Reliable, 2=Best Effort.'),
         DeclareLaunchArgument('qos_imu',         default_value=LaunchConfiguration('qos'), description='Specific QoS used for imu input data: 0=system default, 1=Reliable, 2=Best Effort.'),
@@ -561,10 +561,10 @@ def generate_launch_description():
         DeclareLaunchArgument('depth_image_transport', default_value='compressedDepth', description='Depth compatible types: compressedDepth (see "rosrun image_transport list_transports")'),
        
         # LiDAR
-        DeclareLaunchArgument('subscribe_scan',       default_value='true',       description=''),
+        DeclareLaunchArgument('subscribe_scan',       default_value='false',       description=''),
         DeclareLaunchArgument('scan_topic',           default_value='/scan',       description=''),
         DeclareLaunchArgument('subscribe_scan_cloud', default_value='true',       description=''),
-        DeclareLaunchArgument('scan_cloud_topic',     default_value='/depth/image_raw/points', description=''),
+        DeclareLaunchArgument('scan_cloud_topic',     default_value='/livox/scan/points', description=''),
         DeclareLaunchArgument('scan_normal_k',        default_value='0',           description=''),
         
         # Odometry

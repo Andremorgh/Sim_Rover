@@ -1,0 +1,13 @@
+nav2_simple_local_planner_py:
+  ros__parameters:
+    odom_topic: "/odom/wheels"
+    plan_topic: "/plan"
+    cmd_vel_topic: "/cmd_vel"
+    controller_frequency: 20.0
+    k_lin: 0.8
+    k_ang: 2.0
+    max_lin: 0.6
+    max_ang: 1.2
+    goal_xy_tolerance: 0.10
+    lookahead_distance: 0.75
+    reverse_allowed: false
