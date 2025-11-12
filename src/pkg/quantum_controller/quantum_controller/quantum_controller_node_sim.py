@@ -291,7 +291,7 @@ class QuantumController(Node):
         orient_error = self.normalize_angle(target_angle - self.robot_yaw)
 
         # Interpolazione LUT con angolo ostacolo aggiornato dal lidar
-        v = self.interpolate_LUT(self.linear_LUT, dist_error, self.obstacle_angle) / 5.0
+        v = self.interpolate_LUT(self.linear_LUT, dist_error, self.obstacle_angle) *0.75/ 5.0
         w = self.interpolate_LUT(self.angular_LUT, orient_error, self.obstacle_angle) / 5.0
 
         if dist_error < 0.05:

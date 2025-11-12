@@ -273,7 +273,7 @@
         <ignition_frame_id>rover/livox</ignition_frame_id>
         <pose>0 0 0 0 0 0</pose>
         <visualize>True</visualize>
-        <update_rate>10</update_rate>
+        <update_rate>20</update_rate>
         <!-- This ray plgin is only for visualization. -->
         <!--plugin filename="libros2_livox.so" name="livox_plugin"-->
             <lidar>

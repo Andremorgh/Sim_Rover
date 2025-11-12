@@ -64,7 +64,7 @@ class ClosestObstacleFromPC2(Node):
             # - entro 1.0 m
             # - finestra laterale (|y|) che si allarga col crescere della distanza
             # - FOV orizzontale ~±1.6 rad
-            lateral_gate = 0.25 + 0.25 * ((0.75 - distance) / 0.75)
+            lateral_gate = 0.2 + 0.2 * ((0.75 - distance) / 0.75)
             if distance <= 0.75 and abs(y) <= lateral_gate and -1.6 <= theta <= 1.6:
                 if distance < min_distance:
                     min_distance = distance
